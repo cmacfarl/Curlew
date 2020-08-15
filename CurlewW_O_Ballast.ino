@@ -32,7 +32,6 @@ void handleServo()
   val = map(val, 0, 1023, 0, 180);
   servo1.write(val);
   delay(20);
-
 }
 
 void handleMotor()
