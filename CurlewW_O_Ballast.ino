@@ -25,14 +25,18 @@ void setup()
   pinMode(switchPin, INPUT);
 }
 
-void loop() 
-{ 
+void handleServo()
+{
   // Servo Ops
   val = analogRead(ServopotPin) ;
   val = map(val, 0, 1023, 0, 180);
   servo1.write(val);
   delay(20);
 
+}
+
+void handleMotor()
+{
   // Motor Ops
   int speed = analogRead(MotorpotPin) / 4;
 
@@ -41,6 +45,12 @@ void loop()
   } else {
     reverse(speed);
   }
+}
+
+void loop() 
+{ 
+  handleServo();
+  handleMotor();
 }
 
 void forward(int spd)
