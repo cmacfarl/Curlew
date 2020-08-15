@@ -46,12 +46,6 @@ void handleMotor()
   }
 }
 
-void loop() 
-{ 
-  handleServo();
-  handleMotor();
-}
-
 void forward(int spd)
 {
   digitalWrite(DIR_A, HIGH);
@@ -65,3 +59,10 @@ void reverse(int spd)
   digitalWrite(DIR_B, HIGH);
   analogWrite(PWM, spd);
 }
+
+void loop() 
+{ 
+  handleServo();
+  handleMotor();
+}
+
